@@ -13,17 +13,36 @@ it done: can this be less code?
 
 ## Edit this before every push
 
-**`src/version.ts` — the `MARKER` constant.** It is the one thing in this repository
-you are meant to change by hand, and it is the hero of the page:
+**`src/version.ts` — the `MARKERS` array.** It is the one thing in this repository you
+are meant to change by hand. The page shows the **last** entry; the rest is the record of
+previous pushes.
 
-    export const MARKER = '2026-09-17 first light'
+    const MARKERS = [
+      '2026-09-17 first light',
+      'Canaries got their own tiny oxygen bottles',
+      "Bananas are berries; strawberries aren't",
+    ] as const
 
-Change it, commit, push, then load the deployed URL and look for the new string. If it
-is there, the chain works. That is the test; everything else exists to make it possible.
+**Append to the end. Never edit or reorder what is already there.**
+
+The whole list is kept for a reason: it is the brief for whoever writes the next one.
+Read the existing entries to pick up the register — a short, true, faintly diverting fact
+— then add one in that spirit. Choose the subject at random and deliberately far from the
+last few entries; if a theme is forming across them, jump somewhere else. Do not repeat a
+fact already in the list, and keep it under about 45 characters, because it is set enormous and
+a longer line stops being a headline.
+
+Then commit, push, and load the deployed URL to look for the new text. If it is there, the
+chain works. That is the test; everything else exists to make it possible.
+
+**When you change the marker, print the new text in bold in your reply**, on its own line,
+so the human can see at a glance what to look for on the page. For example:
+
+> Marker is now **Bananas are berries; strawberries aren't**
 
 The commit sha sits beside it on the page, baked in from `$DEPLOY_SHA`. That is what
-separates "my edit landed" from "some build landed" — the case where you pushed but
-forgot to bump the marker.
+separates "my edit landed" from "some build landed" — the case where you pushed but forgot
+to add a marker.
 
 ## Commands
 
