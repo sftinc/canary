@@ -5,4 +5,4 @@
  * The commit sha beside it on the page is baked in from $DEPLOY_SHA, so a
  * marker you forgot to bump still shows a sha that moved.
  */
-export const MARKER = '2026-09-17 first light'
+export const MARKER = '2026-09-17 second light'
