@@ -20,6 +20,7 @@ const MARKERS = [
   'Canaries got their own tiny oxygen bottles',
   "Bananas are berries; strawberries aren't",
   "Scotland's national animal is the unicorn",
+  'A day on Venus is longer than its year',
 ] as const
 
 /** The `?? MARKERS[0]` is unreachable; it is how the compiler learns the array is not empty. */
